@@ -21,8 +21,9 @@ class Generator
 
   def generate
     i = 0
+    company = companies
     people.map do |person|
-      result = (person << companies[i])
+      result = (person << company[i])
       i += 1
       i = 0 if i == (@length / 2)
       result
