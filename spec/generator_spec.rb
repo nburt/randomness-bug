@@ -16,9 +16,9 @@ describe Generator do
 
   it 'should generate one company for every two people' do
     rows = Generator.new(10).generate
-    people = rows.map { |r| "#{r[0]} #{r[1]}"}
+    people = rows.map { |r| [r[0], r[1]] }
     expect(people.uniq.size).to eq 10
-    companies = rows.map { |r| "#{r[2]}"}
+    companies = rows.map { |r| r[2] }
     expect(companies.uniq.size).to eq 5
   end
 
